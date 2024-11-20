@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Breathing Timer</title>
-    <link rel="stylesheet" href="style.css"> <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>Breathing Timer Settings</h1>
-        <div id="phase-indicator">Ready</div> <!-- Phase Indicator -->
+        <h1>Breathing Timer</h1>
+        <div id="phase-indicator">Ready</div>
         <div class="animation">
             <div class="circle"></div>
         </div>
@@ -19,36 +19,48 @@
             <option value="" disabled selected>Select a Preset</option>
             <option value="30,90,15,15,3,3,3">Wim Hof Method (WHM)</option>
             <option value="0,5,5,10,4,5,5">Box Breathing</option>
-            <option value="30,0,0,10,0,6,6">Coherent Breathing (5 breaths/minute)</option>
+            <option value="30,0,0,10,0,6,6">Coherent Breathing</option>
             <option value="8,7,0,10,3,4,8">4-7-8 Breathing</option>
             <option value="30,60,15,20,3,3,3">Tummo Breathing</option>
-            <option value="20,0,0,10,2,3,6">2:1 Ratio Breathing (Relaxation)</option>
+            <option value="20,0,0,10,2,3,6">2:1 Ratio Breathing</option>
         </select>
 
-        <label for="num-breaths">Number of Breaths:</label>
-        <input type="number" id="num-breaths" value="30">
+        <!-- Description Section -->
+        <div id="preset-description" class="description">
+            <p><strong>Select a preset</strong> to see its details here.</p>
+        </div>
 
-        <label for="retention-duration">Retention Duration (seconds):</label>
-        <input type="number" id="retention-duration" value="90">
-
-        <label for="recovery-hold">Recovery Hold Duration (seconds):</label>
-        <input type="number" id="recovery-hold" value="15">
-
-        <label for="gap-between-rounds">Gap Between Rounds (seconds):</label>
-        <input type="number" id="gap-between-rounds" value="15">
-
-        <label for="num-rounds">Number of Rounds:</label>
-        <input type="number" id="num-rounds" value="3">
-
-        <label for="inhale-duration">Inhale Duration (seconds):</label>
-        <input type="number" id="inhale-duration" value="3">
-
-        <label for="exhale-duration">Exhale Duration (seconds):</label>
-        <input type="number" id="exhale-duration" value="3">
+        <!-- Collapsible Customize Section -->
+        <div class="customize-section">
+            <button id="customize-toggle">Customize</button>
+            <div id="customize-settings" class="accordion-content hidden">
+                <label for="num-breaths">Number of Breaths:</label>
+                <input type="number" id="num-breaths" value="30">
+            
+                <label for="retention-duration">Retention Duration (seconds):</label>
+                <input type="number" id="retention-duration" value="90">
+            
+                <label for="recovery-hold">Recovery Hold Duration (seconds):</label>
+                <input type="number" id="recovery-hold" value="15">
+            
+                <label for="gap-between-rounds">Gap Between Rounds (seconds):</label>
+                <input type="number" id="gap-between-rounds" value="15">
+            
+                <label for="num-rounds">Number of Rounds:</label>
+                <input type="number" id="num-rounds" value="3">
+            
+                <label for="inhale-duration">Inhale Duration (seconds):</label>
+                <input type="number" id="inhale-duration" value="3">
+            
+                <label for="exhale-duration">Exhale Duration (seconds):</label>
+                <input type="number" id="exhale-duration" value="3">
+            </div>
+                        
+        </div>
 
         <button id="start-timer-btn">Start Timer</button>
         <button id="stop-timer-btn" disabled>Stop Timer</button>
     </div>
-    <script src="script.js"></script> <!-- Link to JavaScript -->
+    <script src="script.js"></script>
 </body>
 </html>
