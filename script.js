@@ -11,8 +11,8 @@ function resetState() {
     activeTimers.forEach((timer) => clearTimeout(timer));
     activeTimers = []; // Clear the timers array
 
-    // Reset UI elements
-    document.getElementById('phase-indicator').textContent = 'Ready';
+    // Reset UI elements except the status text, which may show
+    // "Stopped" or "Session Complete!" when the timer ends.
     const circle = document.querySelector('.circle');
     circle.style.transitionDuration = '1s'; // Reset animation duration
     circle.style.transform = 'scale(1)'; // Reset circle to original size
@@ -123,6 +123,8 @@ document.getElementById('start-timer-btn').addEventListener('click', () => {
 
 document.getElementById('stop-timer-btn').addEventListener('click', () => {
     stopRequested = true;
+    // Preserve the "Stopped" message when clearing timers
+    document.getElementById('phase-indicator').textContent = 'Stopped';
     resetState();
 });
 
